@@ -181,6 +181,14 @@ ul {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem
 }
+
+
+
 .cards{
-  
+    background: rgb(168, 168, 168);
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    height: 230px;
+    border: 10px solid goldenrod;
 }

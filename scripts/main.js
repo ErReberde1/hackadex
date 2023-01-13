@@ -77,6 +77,7 @@ function $(param) {
         <p>Height: ${resultSearch.height}</p>
         <p>Order: ${resultSearch.order}</p>
         <p>Type: ${resultSearch.types[0].type.name}</p>
+        <img src=${}>
       </article>`
     }
     resultSearch = []
