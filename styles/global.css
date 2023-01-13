@@ -131,7 +131,7 @@ button {
   cursor: pointer;
 }
 
-#results {
+#result {
     padding: 20px;
     /* flex-grow: 1; */
     border: 3px solid black;
@@ -170,3 +170,17 @@ ul {
 
 
 
+.results{
+  margin-top: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100%;
+  height: auto;
+  color: black;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem
+}
+.cards{
+  
+}
