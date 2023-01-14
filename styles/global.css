@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
 
 * {
   margin: 0;
@@ -45,7 +46,6 @@ main {
 
 #right {
   text-align: center;
-  background: #df0d34;
   height: inherit;
   width: inherit;
   border-top-right-radius: 10px;
@@ -54,6 +54,8 @@ main {
   border-left: 10px solid black;
   box-sizing: border-box;
   padding: 15px 20px;
+  background: red;
+  
 }
 
 .buttons-top {
@@ -246,27 +248,39 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   position: absolute;
-  border: 8px solid rgb(17, 15, 9);
+  border: 2px solid rgb(200, 195, 195);
   border-radius: 5px;
   height: 440px;
   justify-content: center;
   backface-visibility: hidden;
+  width: 350px;
   background:
-  -webkit-linear-gradient(
-    -72deg,
-    #ffde45,
-    #ffffff 16%,
-    #ffde45 21%,
-    #ffffff 24%,
-    #452100 27%,
-    #ffde45 36%,
-    #ffffff 45%,
-    #ffffff 60%,
-    #ffde45 72%,
-    #ffffff 80%,
-    #ffde45 84%,
-    #452100)
+-webkit-linear-gradient(
+  -72deg,
+  #172bdf,
+  #ffffff 16%,
+  #7199f8 21%,
+  #ffffff 24%,
+  #000145 27%,
+  #4583ff 36%,
+  #ffffff 45%,
+  #ffffff 60%,
+  #4551ff 72%,
+  #ffffff 80%,
+  #4570ff 84%,
+  #452100)
+
+ }
+
+ .full-card-front > h1{
+  color: rgb(255, 221, 0);
+    -webkit-text-stroke:2px black;
+    font-family: 'Pokemon Solid';
+    font-size: 50px;
+    letter-spacing: 10px;
+    text-align: center;
  }
 
  .full-card-back{
@@ -278,7 +292,22 @@ ul {
   justify-content: center;
   transform: rotateY(180deg);
   backface-visibility: hidden;
-
+width: 350px;
+background-color:
+-webkit-linear-gradient(
+  -72deg,
+  #ffde45,
+  #ffffff 16%,
+  #ffde45 21%,
+  #ffffff 24%,
+  #452100 27%,
+  #ffde45 36%,
+  #ffffff 45%,
+  #ffffff 60%,
+  #ffde45 72%,
+  #ffffff 80%,
+  #ffde45 84%,
+  #452100)
  }
 
 
@@ -311,6 +340,7 @@ ul {
 } */
 
  img{
+
   object-fit: cover;
-  width:100%;
+  width:80%;
   }
