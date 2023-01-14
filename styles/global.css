@@ -240,15 +240,33 @@ ul {
   transform-style: preserve-3d;
   transition:all 550ms cubic-bezier(.1,.22,.8,1.13);
   perspective: 2000px;
-
+ 
 }
  .full-card-front{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   border: 8px solid rgb(17, 15, 9);
   border-radius: 5px;
   height: 440px;
   justify-content: center;
   backface-visibility: hidden;
+  background:
+  -webkit-linear-gradient(
+    -72deg,
+    #ffde45,
+    #ffffff 16%,
+    #ffde45 21%,
+    #ffffff 24%,
+    #452100 27%,
+    #ffde45 36%,
+    #ffffff 45%,
+    #ffffff 60%,
+    #ffde45 72%,
+    #ffffff 80%,
+    #ffde45 84%,
+    #452100)
  }
 
  .full-card-back{
@@ -268,6 +286,15 @@ ul {
   transform: rotateY(-180deg);
  }
 
+ .full-card-front > p{
+
+  background:linear-gradient( rgb(243, 214, 109) 50%, rgb(239, 221, 173));
+  box-shadow: 4px 4px 9px rgb(43, 40, 40);
+  border-radius: 3px;
+  margin-top: 3%;
+
+  width: 150px;
+ }
  
 
 
