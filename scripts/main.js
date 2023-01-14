@@ -79,7 +79,7 @@ buttonSearch.addEventListener("click", async (e) => {
 
       articleRight.innerHTML = `
       <h1> Pokemon </h1>
-      <p> Haz click en una de las tarjetas de más abajo</p>`
+      <p class=parpadea> Haz click en una de las tarjetas de más abajo</p>`
 
      
     }

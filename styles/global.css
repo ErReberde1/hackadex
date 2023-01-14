@@ -14,7 +14,7 @@ h1 {
   font-size: 70px;
   letter-spacing: 10px;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 body {
@@ -27,9 +27,6 @@ body {
 
 }
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   height: 100vh;
   width: auto;
   overflow: auto;
@@ -47,39 +44,39 @@ main {
  
 }
 
-.border {
-  min-height: 31rem;
-  width: 50rem;
-  margin: 0 auto;
-  position: relative;  
+.container{
   display: flex;
-  flex-grow: grow;
+  flex-direction: column;
+  align-items: center;
+}
+
+.border {
+  width: 800px;
+  display: flex;
+  justify-content: center;
 }
 
 #left{
   background: #df0d34;
-  height: inherit;
-  width: inherit;
+  height: 100%;
+  width: 100%;
   border-radius: 10px 0 0 10px;
   border: 1px solid black;
   border-right: 10px solid black;
   box-sizing: border-box;
   padding: 15px 20px;
-
 }
+
 
 #right {
   text-align: center;
-  height: inherit;
-  width: inherit;
+  width: 100%;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border: 1px solid black;
   border-left: 10px solid black;
   box-sizing: border-box;
-  padding: 15px 20px;
   background: #df0d34;
-  
 }
 
 .buttons-top {
@@ -145,9 +142,9 @@ input {
   flex-grow: 1;   
 }
 
-button {
+.searchButton {
   border: 1px solid black;
-  box-shadow: -2px 2px 0 rgba(255, 255, 255, .5);
+  box-shadow: 2px 3px 1px rgba(25, 24, 24, 0.5);
   width: 38px;
   height: 38px;
   background: #05aefd;
@@ -155,11 +152,14 @@ button {
   cursor: pointer;
 }
 
+.searchButton:active{
+  transform: translateY(8px);
+  box-shadow: 0px 1px 0px rgb(14, 14, 14);
+}
+
+
 #result {
-    /* margin-top: 5rem; */
     padding: 20px;
-    /* flex-grow: 1; */
-    
     border-radius: 10px;
     background: rgb(228, 223, 223);
     border: 2px solid black;
@@ -169,15 +169,27 @@ button {
     align-items: center;
     justify-content: flex-start;
     background-position: center;
-    text-align: left;
-    color:black;
-    list-style: none;
-    flex-wrap: wrap;
-    overflow-y: scroll;
-    font-size: 1.3rem;
-    
-
+    font-size: 1.4rem;
+    font-family: 'pokemon solid' ;
+    color: rgb(255, 221, 0);
+    -webkit-text-stroke: 2px black;
+    letter-spacing: 3px;
+    line-height: 1.9rem;
 }
+
+
+
+@media(max-width: 1024px){
+#result{
+  height: 200px;
+  font-size: 15px;
+}
+}
+
+@media(max-width: 1024px){
+ 
+  }
+
 /* #results::-webkit-scrollbar {
   -webkit-appearance: none;
 } */
@@ -198,12 +210,13 @@ ul {
 
 
 .results{
-  margin-top: 100px;
-  margin: 100px;
+  margin-top: 0px;
+  margin: 30px;
   height: auto;
   color: black;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -217,10 +230,23 @@ ul {
   background:radial-gradient(rgb(173, 173, 173) 50%, rgb(122, 122, 122));
   transition: easy 2s;
   border-radius: 10px;
-  height: 300px;
-  width: 220px;
+  height: 170px;
+  width: 160px;
   border: 5px solid goldenrod;
 }
+
+@media(max-width: 1024px){
+  .cards{
+   background: none ;
+   border: none;
+   margin-bottom: -40px;
+  
+}
+
+.cards:hover{
+  transform: scale(1.1);
+  box-shadow: 3px 5px 8px goldenrod;
+ }
 
 .card-info{
   width: 90%;
@@ -237,12 +263,32 @@ ul {
   justify-content: center;
   margin-top: 15px;
   border: 5px solid goldenrod;  
-  height: 100px;
-  width: 160px;
+  height: 110px;
+  width: 120px;
   border-radius: 5px;
   box-shadow: 4px 4px 9px gray;
-  background:linear-gradient(rgb(205, 205, 205) 50%, rgb(150, 150, 150));
+  background: 
+  -webkit-linear-gradient(
+ -72deg,
+ #eff0f5,
+ #929292 16%,
+ #606060 21%,
+ #cecccc 24%,
+ #585858 27%,
+ #dfe6f3 36%,
+ #ffffff 45%,
+ #ffffff 60%,
+ #d7d8e1 72%,
+ #ffffff 80%,
+ #b7b7b7 84%,
+ #a0a0a0) ;
+ };
+}
 
+@media(max-width: 1024px){
+  .img-container{
+    width: 350px;
+  }
 }
 
 
@@ -252,33 +298,44 @@ ul {
   height:auto;
 }
 
+@media(max-width: 1024px){
+  .img-container > img{
+    width: 250px;
+  }
+}
+
 
 .cards-name{
   background:linear-gradient( rgb(243, 214, 109) 50%, rgb(239, 221, 173));
   box-shadow: 4px 4px 9px rgb(43, 40, 40);
   border-radius: 3px;
   margin-top: 3%;
+  font-size: 12.9px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive; ;
   text-align: center;
-  width: 150px;
+  width: 120px;
 }
 
-.cards:hover{
-  transform: scale(1.1);
-  box-shadow: 2px 3px 6px goldenrod;
- }
+
  
-.full-card{
+/* .full-card{ */
   /* transform-style: preserve-3d;
   transition:all 550ms cubic-bezier(.1,.22,.8,1.13);
   perspective: 2000px; */
   /* display: flex;
   justify-content: center; */
  
-}
+/* } */
 
 .full-card-front img {
-  width: 10rem;
+  max-width: 10rem
+}
 
+@media(max-width: 1024px){
+  .full-card-front img {
+    width: 9rem;
+    margin-top: -50px;
+  }
 }
 
 .full-card-front {
@@ -318,14 +375,13 @@ ul {
  } */
 
  .full-card-front > h1 {
-  color: rgb(255, 221, 0);
+    color: rgb(255, 221, 0);
     -webkit-text-stroke:2px black;
     font-family: 'Pokemon Solid';
     font-size: 50px;
     letter-spacing: 10px;
     text-align: center;
     margin-bottom: 3rem;
-    
  }
 
 /*  .full-card-back{
@@ -361,16 +417,18 @@ background-color:
  } */
 
  .full-card-front > p{
-
   background:linear-gradient( rgb(243, 214, 109) 50%, rgb(239, 221, 173));
   box-shadow: 4px 4px 9px rgb(43, 40, 40);
   border-radius: 3px;
+  border: 2px solid orange;
   margin-top: 3%;
   width: 20rem;
   height: 5rem;
   padding: 1.5rem;
   color: black;
  }
+
+
  
 
 
@@ -392,28 +450,57 @@ background-color:
   width:80%;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1024px) {
     .border {
-        
+        display: flex;
         flex-direction: column;
-        width: 70vw;
-        flex-wrap:nowrap;
-        gap: 0.5rem;
+        align-items: center;
+        
       }
     #left {
-             
-        border-radius: 10px;
-        border: none;
-        width: 490px;
+      height: 400px;     
+      width: 350px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 5px;
             }
       
     #right {
-
-        border-radius: 10px;
-        border: none;
-        width: 490px;;
-        
+      width: 350px;
+      height: 300px;     
+      border: none;
+      border-radius: 10px;
             }
+  }
 
 
+  .parpadea {
+  
+    animation-name: parpadeo;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  
+    -webkit-animation-name:parpadeo;
+    -webkit-animation-duration: 1.7s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+  }
+  
+  @-moz-keyframes parpadeo{  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+  }
+  
+  @-webkit-keyframes parpadeo {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+     100% { opacity: 1.0; }
+  }
+  
+  @keyframes parpadeo {  
+    0% { opacity: 1.0; }
+     50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
   }
