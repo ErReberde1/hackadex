@@ -7,10 +7,25 @@
 }
 
 h1 {
-  color: #030f14;
-  text-transform: uppercase;
+  
+  color: rgb(255, 221, 0);
+    -webkit-text-stroke: 2px black;
+  font-family: 'Pokemon Solid';
+  font-size: 70px;
+  letter-spacing: 10px;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  
+}
+.card figure {
+  display: flex;
+
+}
 main {
   display: flex;
   flex-direction: column;
@@ -21,6 +36,15 @@ main {
   margin: 0;
   color: white;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  z-index: 1;
+  background-image: url(/styles/pokemon-in-the-wild.png);
+  background-position: center center; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  
+ 
 }
 
 .border {
@@ -54,7 +78,7 @@ main {
   border-left: 10px solid black;
   box-sizing: border-box;
   padding: 15px 20px;
-  background: red;
+  background: #df0d34;
   
 }
 
@@ -63,18 +87,19 @@ main {
   gap:1rem;
   margin-bottom: 1rem;
   align-items: center;
-
 }
 
-.verde {
+
+.green1 {
   width: 12%;
   height: 40px;
   background-color: #33ff00;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid black; 
+  
 
 }
-.azul {
+.blue2 {
   width: 10%;
   height: 30px;
   background-color: #00c3ff;
@@ -82,7 +107,7 @@ main {
   border: 1px solid black;
 
 }
-.amarillo {
+.yellow3 {
   width: 10%;
   height: 30px;
   background-color: #d9ff00;
@@ -90,7 +115,7 @@ main {
   border: 1px solid black;
 
 }
-.rojo {
+.red4 {
   width: 10%;
   height: 30px;
   background-color: #ff1100;
@@ -98,6 +123,7 @@ main {
   border: 1px solid black;
 
 }
+
 
 form {
   display: flex;
@@ -130,9 +156,10 @@ button {
 }
 
 #result {
+    /* margin-top: 5rem; */
     padding: 20px;
     /* flex-grow: 1; */
-    border: 3px solid black;
+    
     border-radius: 10px;
     background: rgb(228, 223, 223);
     border: 2px solid black;
@@ -140,13 +167,15 @@ button {
     height: 300px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background-position: center;
     text-align: left;
     color:black;
     list-style: none;
     flex-wrap: wrap;
     overflow-y: scroll;
+    font-size: 1.3rem;
+    
 
 }
 /* #results::-webkit-scrollbar {
@@ -239,12 +268,26 @@ ul {
  }
  
 .full-card{
-  transform-style: preserve-3d;
+  /* transform-style: preserve-3d;
   transition:all 550ms cubic-bezier(.1,.22,.8,1.13);
-  perspective: 2000px;
+  perspective: 2000px; */
+  /* display: flex;
+  justify-content: center; */
  
 }
- .full-card-front{
+
+.full-card-front img {
+  width: 10rem;
+
+}
+
+.full-card-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*  .full-card-front{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -272,18 +315,20 @@ ul {
   #4570ff 84%,
   #452100)
 
- }
+ } */
 
- .full-card-front > h1{
+ .full-card-front > h1 {
   color: rgb(255, 221, 0);
     -webkit-text-stroke:2px black;
     font-family: 'Pokemon Solid';
     font-size: 50px;
     letter-spacing: 10px;
     text-align: center;
+    margin-bottom: 3rem;
+    
  }
 
- .full-card-back{
+/*  .full-card-back{
   background-color: blue;
   position: absolute;
   border: 8px solid rgb(17, 15, 9);
@@ -308,12 +353,12 @@ background-color:
   #ffffff 80%,
   #ffde45 84%,
   #452100)
- }
+ } */
 
 
- .full-card:hover{
+/*  .full-card:hover{
   transform: rotateY(-180deg);
- }
+ } */
 
  .full-card-front > p{
 
@@ -321,8 +366,10 @@ background-color:
   box-shadow: 4px 4px 9px rgb(43, 40, 40);
   border-radius: 3px;
   margin-top: 3%;
-
-  width: 150px;
+  width: 20rem;
+  height: 5rem;
+  padding: 1.5rem;
+  color: black;
  }
  
 
@@ -343,4 +390,30 @@ background-color:
 
   object-fit: cover;
   width:80%;
+  }
+
+  @media (max-width: 800px) {
+    .border {
+        
+        flex-direction: column;
+        width: 70vw;
+        flex-wrap:nowrap;
+        gap: 0.5rem;
+      }
+    #left {
+             
+        border-radius: 10px;
+        border: none;
+        width: 490px;
+            }
+      
+    #right {
+
+        border-radius: 10px;
+        border: none;
+        width: 490px;;
+        
+            }
+
+
   }

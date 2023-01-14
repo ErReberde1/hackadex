@@ -1,3 +1,5 @@
+const articleRight = document.querySelector('.full-card-front');
+
 // funcion para seleccionar elementos del DOM
 function $(param) {
   return document.querySelector(param);
@@ -52,9 +54,10 @@ const fullCard = $(".full-card")
 const buttonSearch = $(".searchButton");
 const url = "https://pokeapi.co/api/v2/pokemon/";
 
-//
+
 buttonSearch.addEventListener("click", async (e) => {
   resulTag.innerHTML = ""
+  articleRight.innerHTML = `<h1> Pokemon </h1>`
   resultsSection.innerHTML = ""
   e.preventDefault();
   let resultSearch = await conexionApi(url, search.value);
@@ -67,31 +70,59 @@ buttonSearch.addEventListener("click", async (e) => {
       <article class="cards">
         <div class="img-container">
           <img src=${pokemon.sprites.front_default}>
+          
         </div>
         <p class="cards-name"> ${pokemon.name}</p>
-        <div class="card-info">         
-          <p>Weight:  ${pokemon.weight}kg</p>
-          <p>Height: ${pokemon.height}</p>
-            <hr>
-          <p>Order: ${pokemon.order}</p>
-            <hr>
-           <p>Type: ${pokemon.types[0].type.name}</p>
-    
-        </div>
+        
+        
       </article>\n`
+
+      articleRight.innerHTML = `
+      <h1> Pokemon </h1>
+      <p> Haz click en una de las tarjetas de más abajo</p>`
+
+     
     }
+
+   /*  function handleCardClick(e) {
+        let card = e;
+
+        console.log(card);
+      }
+      const classResults = document.querySelector(".cards");
+      console.log(classResults);
+
+      classResults.addEventListener("click", handleCardClick); */
+
   } else {
     resulTag.innerHTML = `<article class="card">
         <p>Nombre: ${resultSearch.name}</p>
-        <p>Weight: ${resultSearch.weight}</p>
-        <p>Height: ${resultSearch.height}</p>
+        <p>Peso: ${resultSearch.weight}</p>
+        <p>Altura: ${resultSearch.height}</p>
         <p>Order: ${resultSearch.order}</p>
-        <p>Type: ${resultSearch.types[0].type.name}</p>
+        <p>Tipo: ${resultSearch.types[0].type.name}</p>
+        <p>Ataque: ${resultSearch.stats[1].base_stat}</p>
+        <p>Defensa: ${resultSearch.stats[2].base_stat}</p>
+        <p>Velocidad: ${resultSearch.stats[5].base_stat}</p>
+        <p>Puntos de vida: ${resultSearch.types[0].slot}</p>
+
+      </article>`
+
+     /*  let firstGreen = document.querySelector("button-top div");
+      firstGreen.classList.add(".green1");
+      console.log (firstGreen); */
+
+    // añadir imagen del pokemon de la parte izquierda hacia la derecha
+    
+    articleRight.innerHTML = `
+    <h1>Pokemon</h1>
+    <figure>
         <img src=${resultSearch.sprites.front_default}>
         <img src=${resultSearch.sprites.back_default}>
-        
-      </article>`
+        </figure>
+    `
   }
+
   console.log(resultSearch)
 //   fullCard.innerHTML = `<article class="full-card">
 //   <p>Nombre: ${resultSearch.name}</p>
