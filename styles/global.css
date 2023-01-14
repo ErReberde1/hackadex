@@ -266,7 +266,12 @@ ul {
 
 .cards:hover{
   transform: scale(1.1);
-  box-shadow: 3px 5px 8px goldenrod;
+ }
+
+ @media(max-width:1024px){
+  .cards:hover{
+    transform: none;
+   }
  }
 
 .card-info{
