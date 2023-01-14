@@ -15,8 +15,13 @@ h1 {
   letter-spacing: 10px;
   text-align: center;
   margin-top: 6rem;
-
   transition: ease 1s;
+}
+
+@media(max-width:1024px){
+  h1{
+    margin-top: 2rem;
+  }
 }
 
 h2{
