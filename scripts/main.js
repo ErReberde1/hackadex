@@ -48,7 +48,7 @@ async function conexionApi(URI, namePoke) {
 const search = $("#name");
 const resulTag = $("#result");
 const resultsSection = $(".results")
-const fullCard = $(".card-section")
+const fullCard = $(".full-card")
 const buttonSearch = $(".searchButton");
 const url = "https://pokeapi.co/api/v2/pokemon/";
 

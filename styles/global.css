@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -43,6 +44,7 @@ main {
 }
 
 #right {
+  text-align: center;
   background: #df0d34;
   height: inherit;
   width: inherit;
@@ -52,10 +54,6 @@ main {
   border-left: 10px solid black;
   box-sizing: border-box;
   padding: 15px 20px;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-
 }
 
 .buttons-top {
@@ -204,6 +202,8 @@ ul {
 }
 
 .img-container{
+  display: flex;
+  justify-content: center;
   margin-top: 15px;
   border: 5px solid goldenrod;  
   height: 100px;
@@ -216,8 +216,9 @@ ul {
 
 
 .img-container > img {
-  margin:auto;
-  display:block;
+  object-fit: cover;
+  width:auto;
+  height:auto;
 }
 
 
@@ -235,3 +236,54 @@ ul {
   box-shadow: 2px 3px 6px goldenrod;
  }
  
+.full-card{
+  transform-style: preserve-3d;
+  transition:all 550ms cubic-bezier(.1,.22,.8,1.13);
+  perspective: 2000px;
+
+}
+ .full-card-front{
+  position: absolute;
+  border: 8px solid rgb(17, 15, 9);
+  border-radius: 5px;
+  height: 440px;
+  justify-content: center;
+  backface-visibility: hidden;
+ }
+
+ .full-card-back{
+  background-color: blue;
+  position: absolute;
+  border: 8px solid rgb(17, 15, 9);
+  border-radius: 5px;
+  height: 440px;
+  justify-content: center;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+
+ }
+
+
+ .full-card:hover{
+  transform: rotateY(-180deg);
+ }
+
+ 
+
+
+/* .full-card > .full-img-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  border: 5px solid goldenrod;  
+  height: 100px;
+  width: 160px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 9px gray;
+  background:linear-gradient(rgb(205, 205, 205) 50%, rgb(150, 150, 150));
+} */
+
+ img{
+  object-fit: cover;
+  width:100%;
+  }
