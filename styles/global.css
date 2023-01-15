@@ -15,7 +15,6 @@ h1 {
   letter-spacing: 10px;
   text-align: center;
   margin-top: 6rem;
-  transition: ease 1s;
 }
 
 @media(max-width:1024px){
@@ -27,15 +26,15 @@ h1 {
 h2{
   color: rgb(255, 221, 0);
   -webkit-text-stroke: 2px black;
-font-family: 'Pokemon Solid';
-font-size: 60px;
-letter-spacing: 10px;
-text-align: center;
-margin-top: 2rem;
+  font-family: 'Pokemon Solid';
+  font-size: 60px;
+  letter-spacing: 10px;
+  text-align: center;
+  margin-top: 7rem;
 }
 
 h1:hover{
-  transform: rotateY(360deg);
+  text-shadow: 1px 2px 8px rgb(255, 230, 0);
 }
 
 body {
@@ -355,8 +354,16 @@ ul {
 /* } */
 
 .full-card-front img {
-  max-width: 10rem
+  margin-top: 5rem;
+  max-width: 10rem;
+
+  transition: all 1s
 }
+
+.full-card-front img:hover{
+  transform: rotateZ(360deg);
+}
+
 
 @media(max-width: 1024px){
   .full-card-front img {
