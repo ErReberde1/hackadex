@@ -251,13 +251,13 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 5px solid goldenrod;  
-  background:radial-gradient(rgb(173, 173, 173) 50%, rgb(122, 122, 122));
+  /* border: 5px solid goldenrod;  
+  background:radial-gradient(rgb(173, 173, 173) 50%, rgb(122, 122, 122)); */
   transition: easy 2s;
   border-radius: 10px;
   height: 170px;
   width: 160px;
-  border: 5px solid goldenrod;
+  /* border: 5px solid goldenrod; */
 }
 
 /* @media(max-width: 1024px){
@@ -288,51 +288,6 @@ ul {
  
 }
 
-.img-container{
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-  border: 5px solid goldenrod;  
-  height: 110px;
-  width: 120px;
-  border-radius: 5px;
-  box-shadow: 4px 4px 9px gray;
-  background: 
-  -webkit-linear-gradient(
- -72deg,
- #eff0f5,
- #929292 16%,
- #606060 21%,
- #cecccc 24%,
- #585858 27%,
- #dfe6f3 36%,
- #ffffff 45%,
- #ffffff 60%,
- #d7d8e1 72%,
- #ffffff 80%,
- #b7b7b7 84%,
- #a0a0a0) ;
- };
-
-
-@media(max-width: 1024px){
-  /* .img-container{
-    width: 350px;
-  } */
-}
-
-
-.img-container > img {
-  object-fit: cover;
-  width:auto;
-  height:auto;
-}
-
-@media(max-width: 1024px){
-  .img-container > img{
-    width: 250px;
-  }
-}
 
 
 .cards-name{
@@ -349,14 +304,14 @@ ul {
 
 
  
-/* .full-card{ */
-  /* transform-style: preserve-3d;
+.cards-container{ 
+   transform-style: preserve-3d;
   transition:all 550ms cubic-bezier(.1,.22,.8,1.13);
-  perspective: 2000px; */
-  /* display: flex;
-  justify-content: center; */
+  perspective: 2000px;
+  display: flex;
+  justify-content: center;
  
-/* } */
+ }
 
 .full-card-front img {
 
@@ -396,7 +351,7 @@ ul {
   align-items: center;
 }
 
-/*  .full-card-front{
+.cards-front{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -404,10 +359,10 @@ ul {
   position: absolute;
   border: 2px solid rgb(200, 195, 195);
   border-radius: 5px;
-  height: 440px;
+  height: 150px;
   justify-content: center;
   backface-visibility: hidden;
-  width: 350px;
+  width: 150px;
   background:
 -webkit-linear-gradient(
   -72deg,
@@ -424,7 +379,7 @@ ul {
   #4570ff 84%,
   #452100)
 
- } */
+ }
 
  .full-card-front > h1 {
     color: rgb(255, 221, 0);
@@ -437,17 +392,15 @@ ul {
     
  }
 
-/*  .full-card-back{
-  background-color: blue;
+.cards-back{
   position: absolute;
-  border: 8px solid rgb(17, 15, 9);
   border-radius: 5px;
-  height: 440px;
+  height: 150px;
   justify-content: center;
   transform: rotateY(180deg);
   backface-visibility: hidden;
-width: 350px;
-background-color:
+width: 150px;
+background:
 -webkit-linear-gradient(
   -72deg,
   #ffde45,
@@ -462,12 +415,12 @@ background-color:
   #ffffff 80%,
   #ffde45 84%,
   #452100)
- } */
+ }
 
 
-/*  .full-card:hover{
+.cards-container:hover{
   transform: rotateY(-180deg);
- } */
+ }
 
  .full-card-front > p{
   background:linear-gradient( rgb(243, 214, 109) 50%, rgb(239, 221, 173));

@@ -68,17 +68,17 @@ buttonSearch.addEventListener("click", async (e) => {
       console.log(pokemon)
       resultsSection.innerHTML += `
       <article class="cards">
-      <div class='cards-container'>
-      <div class='cards-front'>
-        <div class="img-container">
-          <img src=${pokemon.sprites.front_default}>  
-        </div>
-        <p class="cards-name"> ${pokemon.name}</p>
-      </div>
-      <div class='cards-back'>
-      <img src=${pokemon.sprites.back_default}>
-      </div>
-      </div>       
+        <div class='cards-container'>
+          <div class='cards-front'>
+            <div>
+              <img src=${pokemon.sprites.front_default}>  
+            </div>
+              <p class="cards-name"> ${pokemon.name}</p>
+          </div>
+          <div class='cards-back'>
+            <img src=${pokemon.sprites.back_default}>
+          </div>
+        </div>       
       </article>\n`
 
       articleRight.innerHTML = `
