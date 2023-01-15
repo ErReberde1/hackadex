@@ -113,7 +113,7 @@ buttonSearch.addEventListener("click", async (e) => {
         <p>Defensa: ${resultSearch.stats[2].base_stat}</p>
         <p>Velocidad: ${resultSearch.stats[5].base_stat}</p>
         <p>Puntos de vida: ${resultSearch.types[0].slot}</p>
-
+        
       </article>`
 
     /*  let firstGreen = document.querySelector("button-top div");

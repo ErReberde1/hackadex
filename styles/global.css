@@ -276,6 +276,8 @@ input {
 .first-ul {
   margin-top: 0.5rem;
 }
+
+
 ul {
   margin-top: .009rem;;
   display: flex;
@@ -294,6 +296,7 @@ ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
+ padding: 1rem;
 }
 
 
@@ -395,18 +398,18 @@ ul {
   background:
 -webkit-linear-gradient(
   -72deg,
-  #172bdf,
+  #5b659a,
   #ffffff 16%,
   #7199f8 21%,
   #ffffff 24%,
-  #000145 27%,
+  #5d60ff 27%,
   #4583ff 36%,
   #ffffff 45%,
   #ffffff 60%,
   #4551ff 72%,
   #ffffff 80%,
   #4570ff 84%,
-  #452100)
+  #000000)
 
  }
 
@@ -432,19 +435,19 @@ ul {
   width: 170px;
   background:
 -webkit-linear-gradient(
-  -72deg,
+  72deg,
   #ffde45,
   #ffffff 16%,
   #ffde45 21%,
   #ffffff 24%,
-  #452100 27%,
+  #fcd4ae 27%,
   #ffde45 36%,
   #ffffff 45%,
   #ffffff 60%,
   #ffde45 72%,
   #ffffff 80%,
   #ffde45 84%,
-  #452100)
+  #ffcb9b)
  }
 
  .img-card{
@@ -543,7 +546,17 @@ ul {
 
 
   .parpadea {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    background-color: yellow;
+    color: red;
+    width: 300px;
+    height: 50px;
+    margin-top: 3rem;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px rgb(0, 0, 0);
     animation-name: parpadeo;
     animation-duration: 1s;
     animation-timing-function: linear;
