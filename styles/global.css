@@ -354,8 +354,8 @@ ul {
 /* } */
 
 .full-card-front img {
-  margin-top: 5rem;
-  max-width: 10rem;
+  margin-top: 1rem;
+  max-width: 15rem;
 
   transition: all 1s
 }
