@@ -197,7 +197,6 @@ input {
     justify-content: flex-start;
     background-position: center;
     font-size: 1.4rem;
-    font-family: 'pokemon solid' ;
     color: rgb(255, 221, 0);
     -webkit-text-stroke: 2px black;
     letter-spacing: 3px;
@@ -210,6 +209,8 @@ input {
 #result{
   height: 200px;
   font-size: 15px;
+  letter-spacing: 0;
+  line-height: 20px;
 }
 }
 
@@ -254,7 +255,20 @@ ul {
   flex-direction: column;
   align-items: center;
   border: 5px solid goldenrod;  
-  background:radial-gradient(rgb(173, 173, 173) 50%, rgb(122, 122, 122));
+  background: -webkit-linear-gradient( 
+    -72deg,
+     #eff0f5,
+     #929292 16%, 
+     #606060 21%, 
+     #cecccc 24%,
+      #585858 27%,
+       #dfe6f3 36%,
+        #ffffff 45%,
+         #ffffff 60%,
+          #d7d8e1 72%,
+           #ffffff 80%,
+            #b7b7b7 84%,
+             #a0a0a0);
   transition: easy 2s;
   border-radius: 10px;
   height: 170px;
@@ -521,7 +535,7 @@ background-color:
       
     #right {
       width: 350px;
-      height: 300px;     
+      height: 305px;     
       border: none;
       border-radius: 10px;
             }
