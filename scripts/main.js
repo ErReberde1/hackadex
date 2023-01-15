@@ -68,11 +68,16 @@ buttonSearch.addEventListener("click", async (e) => {
       console.log(pokemon)
       resultsSection.innerHTML += `
       <article class="cards">
+      <div class='cards-front'>
         <div class="img-container">
-          <img src=${pokemon.sprites.front_default}>
-          
+          <img src=${pokemon.sprites.front_default}>  
         </div>
         <p class="cards-name"> ${pokemon.name}</p>
+      </div>
+      <div class='cards-back'>
+
+      </div>
+      
         
         
       </article>\n`
@@ -81,18 +86,18 @@ buttonSearch.addEventListener("click", async (e) => {
       <h1> Pokemon </h1>
       <p class=parpadea> Haz click en una de las tarjetas de más abajo</p>`
 
-     
+
     }
 
-   /*  function handleCardClick(e) {
-        let card = e;
-
-        console.log(card);
-      }
-      const classResults = document.querySelector(".cards");
-      console.log(classResults);
-
-      classResults.addEventListener("click", handleCardClick); */
+    /*  function handleCardClick(e) {
+         let card = e;
+ 
+         console.log(card);
+       }
+       const classResults = document.querySelector(".cards");
+       console.log(classResults);
+ 
+       classResults.addEventListener("click", handleCardClick); */
 
   } else {
     resulTag.innerHTML = `<article class="card">
@@ -108,12 +113,12 @@ buttonSearch.addEventListener("click", async (e) => {
 
       </article>`
 
-     /*  let firstGreen = document.querySelector("button-top div");
-      firstGreen.classList.add(".green1");
-      console.log (firstGreen); */
+    /*  let firstGreen = document.querySelector("button-top div");
+     firstGreen.classList.add(".green1");
+     console.log (firstGreen); */
 
     // añadir imagen del pokemon de la parte izquierda hacia la derecha
-    
+
     articleRight.innerHTML = `
     <h1>Pokemon</h1>
     <figure>
@@ -124,17 +129,17 @@ buttonSearch.addEventListener("click", async (e) => {
   }
 
   console.log(resultSearch)
-//   fullCard.innerHTML = `<article class="full-card">
-//   <p>Nombre: ${resultSearch.name}</p>
-//   <p>Weight: ${resultSearch.weight}</p>
-//   <p>Height: ${resultSearch.height}</p>
-//   <p>Order: ${resultSearch.order}</p>
-//   <p>Type: ${resultSearch.types[0].type.name}</p>
-//   <img src=${resultSearch.sprites.front_default}>
-//   <img src=${resultSearch.sprites.back_default}>
-  
-// </article>`
-  
+  //   fullCard.innerHTML = `<article class="full-card">
+  //   <p>Nombre: ${resultSearch.name}</p>
+  //   <p>Weight: ${resultSearch.weight}</p>
+  //   <p>Height: ${resultSearch.height}</p>
+  //   <p>Order: ${resultSearch.order}</p>
+  //   <p>Type: ${resultSearch.types[0].type.name}</p>
+  //   <img src=${resultSearch.sprites.front_default}>
+  //   <img src=${resultSearch.sprites.back_default}>
+
+  // </article>`
+
   resultSearch = []
   search.value = ""
 });
