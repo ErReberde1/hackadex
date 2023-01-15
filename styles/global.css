@@ -354,7 +354,7 @@ ul {
 
 
 
-.pokeball{
+.pokeball-roller{
   margin-top: 1rem;
   max-width: 15rem;
   transition: ease 1s;
@@ -368,7 +368,7 @@ ul {
   to {transform: rotate(360deg);}
 }
 
-.pokeball:hover{
+.pokeball-roller:hover{
   transform: rotateZ(360deg);
 }
 
