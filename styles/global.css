@@ -55,7 +55,7 @@ main {
   color: white;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   z-index: 1;
-  background-image: url(/styles/pokemon-in-the-wild.png);
+  background-image: url('../styles/pokemon-in-the-wild.png');
   background-position: center center; 
   background-repeat: no-repeat;
   background-attachment: fixed;
