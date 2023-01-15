@@ -33,6 +33,13 @@ h2{
   margin-top: 7rem;
 }
 
+@media(max-width:1024px){
+  h2{
+    margin-top: 1rem;
+  }
+}
+
+
 h1:hover{
   text-shadow: 1px 2px 8px rgb(255, 230, 0);
 }
@@ -355,20 +362,33 @@ ul {
 
 .full-card-front img {
   margin-top: 1rem;
+  width: 10rem;
+
+}
+
+
+.pokeball{
+  margin-top: 1rem;
   max-width: 15rem;
 
   transition: all 1s
 }
 
-.full-card-front img:hover{
+.pokeball:hover{
   transform: rotateZ(360deg);
+}
+
+@media(max-width: 1024px){
+ .pokeball{
+  margin-top: 10rem;
+ }
 }
 
 
 @media(max-width: 1024px){
   .full-card-front img {
     width: 9rem;
-    margin-top: -50px;
+    margin-top: 25px;
   }
 }
 
