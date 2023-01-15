@@ -53,8 +53,7 @@ const resultsSection = $(".results")
 const fullCard = $(".full-card")
 const buttonSearch = $(".searchButton");
 const url = "https://pokeapi.co/api/v2/pokemon/";
-const snipper = $("full-card-front")
-
+const sppiner = $("full-card-front")
 
 
 buttonSearch.addEventListener("click", async (e) => {
@@ -67,7 +66,9 @@ buttonSearch.addEventListener("click", async (e) => {
   if (resultSearch.length != undefined) {
     for (let i = 0; i < resultSearch.length; i++) {
       let pokemon = await atackApi(resultSearch[i].url);
-     
+      
+
+      
       console.log(pokemon)
       resultsSection.innerHTML += `
       <article class="cards">
