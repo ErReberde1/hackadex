@@ -53,6 +53,8 @@ const resultsSection = $(".results")
 const fullCard = $(".full-card")
 const buttonSearch = $(".searchButton");
 const url = "https://pokeapi.co/api/v2/pokemon/";
+const snipper = $("full-card-front")
+
 
 
 buttonSearch.addEventListener("click", async (e) => {
@@ -65,26 +67,19 @@ buttonSearch.addEventListener("click", async (e) => {
   if (resultSearch.length != undefined) {
     for (let i = 0; i < resultSearch.length; i++) {
       let pokemon = await atackApi(resultSearch[i].url);
+     
       console.log(pokemon)
       resultsSection.innerHTML += `
       <article class="cards">
         <div class='cards-container'>
           <div class='cards-front'>
-            <div>
+            <div class='img-card'>
               <img src=${pokemon.sprites.front_default}>  
             </div>
               <p class="cards-name"> ${pokemon.name}</p>
           </div>
           <div class='cards-back'>
             <img src=${pokemon.sprites.back_default}>
-            <p>Peso: ${pokemon.weight}</p>
-            <p>Altura: ${pokemon.height}</p>
-            <p>Order: ${pokemon.order}</p>
-            <p>Tipo: ${pokemon.types[0].type.name}</p>
-            <p>Ataque: ${pokemon.stats[1].base_stat}</p>
-            <p>Defensa: ${pokemon.stats[2].base_stat}</p>
-            <p>Velocidad: ${pokemon.stats[5].base_stat}</p>
-            <p>Puntos de vida: ${pokemon.types[0].slot}</p>
           </div>
         </div>       
       </article>\n`
