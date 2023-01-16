@@ -1,4 +1,4 @@
-
+import {imagenes} from '../img/img.js'
 
 // funcion para seleccionar elementos del DOM
 function $(param) {
@@ -74,6 +74,29 @@ async function selectCard (id){
       `
 }
 
+function styleCard(param){
+  console.log(param)
+  console.log(imagenes[0].electric)
+  return param == "electric" ?  imagenes[0].electric : 
+        param == "bug" ? imagenes[1].bug :
+        param == "dark" ? imagenes[2].dark :
+        param == "dragon" ? imagenes[3].dragon :
+        param == "estrella" ? imagenes[4].estrella :
+        param == "fairy" ? imagenes[5].fairy :
+        param == "fighting" ? imagenes[6].fighting :
+        param == "fire" ? imagenes[7].fire :
+        param == "flying" ? imagenes[8].flying :
+        param == "ghost" ? imagenes[9].ghost :
+        param == "grass" ? imagenes[10].grass :
+        param == "ground" ? imagenes[11].ground :
+        param == "ice" ? imagenes[12].ice :
+        param == "poison" ? imagenes[13].poison :
+        param == "psychic" ? imagenes[14].psychic :
+        param == "rock" ? imagenes[15].rock :
+        param == "steel" ? imagenes[16].steel :
+        param == "water" ? imagenes[17].water : imagenes[18].normal
+}
+
 
 //Seleccionamos el elemento input/buscador del DOM y lo metemos en la variable
 //  search
@@ -111,6 +134,7 @@ buttonSearch.addEventListener("click", async(e)=>{
         <div class='cards-container' >
           <div class='cards-front'>
             <p class="cards-name"> ${pokemon.name}</p>
+            <img  src=${ styleCard(pokemon.types[0].type.name)} /> 
             <div>
               <img src=${pokemon.sprites.front_default}>  
             </div>
