@@ -20,29 +20,30 @@ async function atackApi(url) {
 async function conexionApi(URI, namePoke) {
   try {
     if (namePoke == undefined) throw new Error("Escribe algo");
-    return await atackApi(URI + namePoke.toLowerCase());
+    return await atackApi(URI + namePoke);
   } catch (e) {
     let { results } = await atackApi(
       "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=2100"
     );
 
     try {
-      const resultSearch = results.filter((e) => e.name.includes(namePoke.toLowerCase()));
+      console.log(namePoke);
+      const resultSearch = results.filter((e) => e.name.includes(namePoke));
       if (resultSearch.length == 0) throw new Error("No hay conincidencia");
-      resultsSection.scrollIntoView({behavior: "smooth"})
+      console.log(resultSearch);
       return resultSearch;
     } catch (e) {
       try {
-        let palabra = namePoke.substring(0, 2).toLowerCase();
+        let palabra = namePoke.substring(0, 2);
         if (palabra.length < 3)
           throw new Error("Tienes que meter una palabra con al menos 3 letras");
         const newSearch = results.filter((e) => e.name.startsWith(palabra));
         console.log(
           "Quizá querías decir: " + newSearch[0].name + " " + newSearch[1].name
         );
-        resultsSection.scrollIntoView({behavior: "smooth", nearest: "center"})
-        return newSearch
+        return newSearch;
       } catch (e) {
+        console.log("No hay ningún pokemon con el nombre indicado");
         articleRight.innerHTML = `
           <h1>Pokemon</h1>
           <p>No hay ningún pokemon con el nombre indicado<p>`;
@@ -73,7 +74,6 @@ async function selectCard(id) {
           <img src=${pokemon.sprites.back_default}>
           </figure>
       `;
-  search.focus()
 }
 
 function styleCard(param) {
@@ -117,6 +117,7 @@ function styleCard(param) {
 }
 
 function getGradient(param) {
+  console.log(param);
   return param == "electric"
     ? gradients[0].electric
     : param == "bug"
@@ -174,14 +175,16 @@ buttonSearch.addEventListener("click", async (e) => {
     resultsSection.innerHTML = "";
     e.preventDefault();
     if (!search.value == undefined) throw new Error("Escribe algo...");
+
     let resultSearch = await conexionApi(url, search.value);
     if (typeof resultSearch != "object")
       throw new Error(" No existe el pokemon");
+    console.log(resultSearch);
     if (resultSearch.length != undefined) {
       for (let i = 0; i < resultSearch.length; i++) {
         let pokemon = await atackApi(resultSearch[i].url);
         resultsSection.innerHTML += `
-      <article class="cards" id=${pokemon.id} >
+      <article class="cards" id=${pokemon.id}>
         <div class='cards-container' >
           <div class='cards-front' style="background:-webkit-linear-gradient(${getGradient(
             pokemon.types[0].type.name
@@ -274,6 +277,7 @@ buttonSearch.addEventListener("click", async (e) => {
     const cards = $All(".cards");
     for (let i = 0; i < cards.length; i++) {
       let id = cards[i].getAttribute("id");
+      /* let type = cards[i].getAttribute("data") */
       cards[i].addEventListener("click", () => selectCard(id));
     }
 
