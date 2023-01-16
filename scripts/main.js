@@ -133,9 +133,12 @@ buttonSearch.addEventListener("click", async(e)=>{
       <article class="cards" id=${pokemon.id}>
         <div class='cards-container' >
           <div class='cards-front'>
+          <div class="type-container">
+          <img  src=${ styleCard(pokemon.types[0].type.name)} /> 
             <p class="cards-name"> ${pokemon.name}</p>
-            <img  src=${ styleCard(pokemon.types[0].type.name)} /> 
-            <div>
+           
+          </div>
+            <div class="border-img">
               <img src=${pokemon.sprites.front_default}>  
             </div>
             <div class='cards-stats'>

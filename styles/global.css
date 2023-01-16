@@ -315,23 +315,18 @@ ul {
 }
 
 
-.cards:hover{
+/* .cards:hover{
   transform: scale(1.1);
- }
+ } */
 
 
 
-.card-info{
+.border-img{
+  border: 5px solid goldenrod;
+  border-radius: 5px;
+  height: 100px;
   width: 90%;
 }
-
-
-.card-info > p{
-  margin: 3px;
- 
-}
-
-
 
 .cards-name{
   background:linear-gradient( rgb(243, 214, 109) 50%, rgb(239, 221, 173));
@@ -546,6 +541,18 @@ ul {
       font-size: 40px;
     }
 
+    .type-container{
+      width: 100%;
+      display: flex;
+      justify-content: space-around
+    }
+
+    .type-container > p{
+      position:absolute;
+      margin-top: 1.5rem;
+    }
+
+   
 
   }
 
