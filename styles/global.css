@@ -389,6 +389,7 @@ ul {
   backface-visibility: hidden;
   width: 170px;
   height: 300px;
+  gap:0.3rem;
   background:
 -webkit-linear-gradient(
   -72deg,
@@ -405,6 +406,18 @@ ul {
   #4570ff 84%,
   #000000)
   
+ }
+
+ .type-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* gap: 3rem; */
+ }
+ .type-container img {
+  width: 30px;
+  margin-bottom: 1rem;;
  }
 
  .full-card-front > h1 {
@@ -448,6 +461,17 @@ ul {
   #ffde45 84%,
   #ffcb9b)
   
+ }
+
+ .cards-back img {
+  width: 10rem;
+  height: 10rem;
+ }
+
+ .cards-stats {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 13px;
+ 
  }
 
  .img-card{

@@ -142,14 +142,22 @@ buttonSearch.addEventListener("click", async(e)=>{
               <img src=${pokemon.sprites.front_default}>  
             </div>
             <div class='cards-stats'>
-              <p>Peso: ${pokemon.weight}</p>
-              <p>Altura: ${pokemon.height}</p>
-              <p>Order: ${pokemon.order}</p>
-              <p>Tipo: ${pokemon.types[0].type.name}</p>
-              <p>Ataque: ${pokemon.stats[1].base_stat}</p>
-              <p>Defensa: ${pokemon.stats[2].base_stat}</p>
-              <p>Velocidad: ${pokemon.stats[5].base_stat}</p>
-              <p>Puntos de vida: ${pokemon.types[0].slot}</p>
+
+              <p>No. ${pokemon.order}</p>
+              <hr>
+              <p>🏋️ ${pokemon.weight}</p>
+              <hr>
+              <p>⬆️  ${pokemon.height}</p>
+              <hr>
+              
+              <p>⚔️ ${pokemon.stats[1].base_stat}</p>
+              <hr>
+              <p>🛡️ ${pokemon.stats[2].base_stat}</p>
+              <hr>
+              <p>💨 ${pokemon.stats[5].base_stat}</p>
+              <hr>
+              <p>❤️ ${pokemon.types[0].slot}</p>
+              <hr>
             </div>  
           </div>
           <div class='cards-back'>
