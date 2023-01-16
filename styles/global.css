@@ -343,8 +343,6 @@ ul {
   width: 120px;
 }
 
-
-
  
 .cards-container{ 
    transform-style: preserve-3d;
@@ -352,9 +350,9 @@ ul {
   perspective: 2000px;
   display: flex;
   justify-content: center;
+  
  
  }
-
 
 
 .pokeball-roller{
@@ -410,7 +408,7 @@ ul {
   #ffffff 80%,
   #4570ff 84%,
   #000000)
-
+  
  }
 
  .full-card-front > h1 {
@@ -448,6 +446,7 @@ ul {
   #ffffff 80%,
   #ffde45 84%,
   #ffcb9b)
+  
  }
 
  .img-card{
