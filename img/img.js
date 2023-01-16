@@ -18,7 +18,7 @@ import steel from "./steel.png";
 import water from "./water.png"; */
 
 export const imagenes = [
-  { electric: "../img/electric.png" },
+  { electric: "../img/electric.png"},
   { bug: "../img/bug.png"},
   { dark: "../img/dark.png" },
   { dragon: "../img/dragon.png" },

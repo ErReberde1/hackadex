@@ -1,4 +1,5 @@
 import {imagenes} from '../img/img.js'
+import {gradients} from './gradient.js'
 
 // funcion para seleccionar elementos del DOM
 function $(param) {
@@ -75,9 +76,7 @@ async function selectCard (id){
 }
 
 function styleCard(param){
-  console.log(param)
-  console.log(imagenes[0].electric)
-  return param == "electric" ?  imagenes[0].electric : 
+  return param == "electric" ? imagenes[0].electric : 
         param == "bug" ? imagenes[1].bug :
         param == "dark" ? imagenes[2].dark :
         param == "dragon" ? imagenes[3].dragon :
@@ -94,9 +93,31 @@ function styleCard(param){
         param == "psychic" ? imagenes[14].psychic :
         param == "rock" ? imagenes[15].rock :
         param == "steel" ? imagenes[16].steel :
-        param == "water" ? imagenes[17].water : imagenes[18].normal
+        param == "water" ? imagenes[17].water : imagenes[18].normal;
 }
 
+function getGradient(param){
+  console.log(param)
+  return param == "electric" ? gradients[0].electric : 
+        param == "bug" ? gradients[1].bug :
+        param == "dark" ? gradients[2].dark :
+        param == "dragon" ? gradients[3].dragon :
+        param == "estrella" ? gradients[4].estrella :
+        param == "fairy" ? gradients[5].fairy :
+        param == "fighting" ? gradients[6].fighting :
+        param == "fire" ? gradients[7].fire :
+        param == "flying" ? gradients[8].flying :
+        param == "ghost" ? gradients[9].ghost :
+        param == "grass" ? gradients[10].grass :
+        param == "ground" ? gradients[11].ground :
+        param == "ice" ? gradients[12].ice :
+        param == "poison" ? gradients[13].poison :
+        param == "psychic" ? gradients[14].psychic :
+        param == "rock" ? gradients[15].rock :
+        param == "steel" ? gradients[16].steel :
+        param == "water" ? gradients[17].water : gradients[18].normal
+
+}
 
 //Seleccionamos el elemento input/buscador del DOM y lo metemos en la variable
 //  search
@@ -126,38 +147,26 @@ buttonSearch.addEventListener("click", async(e)=>{
   console.log(resultSearch)
   if (resultSearch.length != undefined) {
     for (let i = 0; i < resultSearch.length; i++) {
-
       let pokemon = await atackApi(resultSearch[i].url);
-      console.log(pokemon)
       resultsSection.innerHTML += `
-      <article class="cards" id=${pokemon.id}>
+      <article class="cards" id=${pokemon.id}  >
         <div class='cards-container' >
-          <div class='cards-front'>
+          <div class='cards-front' style="background:-webkit-linear-gradient(${getGradient(pokemon.types[0].type.name)})">
           <div class="type-container">
-          <img  src=${ styleCard(pokemon.types[0].type.name)} /> 
+          <img  src="${styleCard(pokemon.types[0].type.name)}"/> 
             <p class="cards-name"> ${pokemon.name}</p>
-           
           </div>
             <div class="border-img">
               <img src=${pokemon.sprites.front_default}>  
             </div>
-            <div class='cards-stats'>
-
+            <div class='cards-stats' >
               <p>No. ${pokemon.order}</p>
-              <hr>
-              <p>🏋️ ${pokemon.weight}</p>
-              <hr>
-              <p>⬆️  ${pokemon.height}</p>
-              <hr>
-              
-              <p>⚔️ ${pokemon.stats[1].base_stat}</p>
-              <hr>
-              <p>🛡️ ${pokemon.stats[2].base_stat}</p>
-              <hr>
-              <p>💨 ${pokemon.stats[5].base_stat}</p>
-              <hr>
-              <p>❤️ ${pokemon.types[0].slot}</p>
-              <hr>
+              <p>🏋️ ${pokemon.weight}</p>        
+              <p>⬆️  ${pokemon.height}</p>                           
+              <p>⚔️ ${pokemon.stats[1].base_stat}</p>            
+              <p>🛡️ ${pokemon.stats[2].base_stat}</p>           
+              <p>💨 ${pokemon.stats[5].base_stat}</p>            
+              <p>❤️ ${pokemon.types[0].slot}</p>           
             </div>  
           </div>
           <div class='cards-back'>
@@ -168,6 +177,11 @@ buttonSearch.addEventListener("click", async(e)=>{
       </article>\n`;
 
     }
+
+    /* const cards = $All(".cards")
+    for (let i=0; i<cards.length; i++) {
+      cards[i].style.background = getGradient(pokemon.types[0].type.name)
+    } */
 
     /*  function handleCardClick(e) {
          let card = e;
@@ -223,6 +237,7 @@ buttonSearch.addEventListener("click", async(e)=>{
       const cards = $All(".cards")
       for(let i=0; i<cards.length; i++){
         let id = cards[i].getAttribute("id")
+        /* let type = cards[i].getAttribute("data") */
         cards[i].addEventListener("click",()=>selectCard(id))
       }
 
