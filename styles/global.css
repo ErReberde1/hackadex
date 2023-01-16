@@ -423,6 +423,10 @@ ul {
     
  }
 
+ .full-card-front  img {
+  width: 9rem;
+ }
+
 .cards-back{
   display: flex;
   position: absolute;
