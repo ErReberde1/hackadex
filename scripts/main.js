@@ -27,9 +27,11 @@ async function conexionApi(URI, namePoke) {
     );
 
     try {
-      const resultSearch = results.filter((e) => e.name.includes(namePoke.toLowerCase()));
+      const resultSearch = results.filter((e) =>
+        e.name.includes(namePoke.toLowerCase())
+      );
       if (resultSearch.length == 0) throw new Error("No hay conincidencia");
-      resultsSection.scrollIntoView({behavior: "smooth"})
+      resultsSection.scrollIntoView({ behavior: "smooth" });
       return resultSearch;
     } catch (e) {
       try {
@@ -40,8 +42,11 @@ async function conexionApi(URI, namePoke) {
         console.log(
           "Quizá querías decir: " + newSearch[0].name + " " + newSearch[1].name
         );
-        resultsSection.scrollIntoView({behavior: "smooth", nearest: "center"})
-        return newSearch
+        resultsSection.scrollIntoView({
+          behavior: "smooth",
+          nearest: "center",
+        });
+        return newSearch;
       } catch (e) {
         articleRight.innerHTML = `
           <h1>Pokemon</h1>
@@ -73,7 +78,7 @@ async function selectCard(id) {
           <img src=${pokemon.sprites.back_default}>
           </figure>
       `;
-  search.focus()
+  search.focus();
 }
 
 function styleCard(param) {
@@ -188,17 +193,21 @@ buttonSearch.addEventListener("click", async (e) => {
           )})">
           <div class="type-container">
           <img  src="${styleCard(pokemon.types[0].type.name)}"/> 
-            <p class="cards-name"> ${pokemon.name}</p>
+            <p class="cards-name"> ${pokemon.name.toUpperCase()}</p>
           </div>
             <div class="border-img">
-              <img src=${pokemon.sprites.front_default || pokemon.sprites.other["official-artwork"].front_default}>  
+              <img src=${
+                pokemon.sprites.front_default ||
+                pokemon.sprites.other["official-artwork"].front_default
+              }>  
             </div>
             <div class='cards-stats' >
               <p>No. ${pokemon.order}</p>
-              <p>🏋️ ${pokemon.weight}</p>        
+               <p>🛡️ ${pokemon.stats[2].base_stat}</p>
               <p>⬆️  ${pokemon.height}</p>                           
               <p>⚔️ ${pokemon.stats[1].base_stat}</p>            
-              <p>🛡️ ${pokemon.stats[2].base_stat}</p>           
+              
+              <p>🏋️ ${pokemon.weight}</p>        
               <p>💨 ${pokemon.stats[5].base_stat}</p>            
               <p>❤️ ${pokemon.types[0].slot}</p>           
             </div>  
@@ -232,7 +241,7 @@ buttonSearch.addEventListener("click", async (e) => {
        classResults.addEventListener("click", handleCardClick); */
     } else {
       resulTag.innerHTML = `<article class="card">
-        <p>Nombre: ${resultSearch.name}</p>
+        <p>Nombre: ${resultSearch.name.toUpperCase()}</p>
         <p>Peso: ${resultSearch.weight}</p>
         <p>Altura: ${resultSearch.height}</p>
         <p>Order: ${resultSearch.order}</p>

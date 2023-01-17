@@ -131,9 +131,9 @@ main {
   height: 40px;
   background-color: #33ff00;
   border-radius: 50%;
-  border: 1px solid black;
+  /* border: 1px solid black;*/
   box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.5);
-  /* animation: glow 0.5s infinite; */
+  animation: glow 0.5s infinite;
 }
 
 @keyframes glow {
@@ -151,7 +151,7 @@ main {
   height: 30px;
   background-color: #00c3ff;
   border-radius: 50%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.5);
   /* animation: glow 0.5s infinite; */
 }
@@ -171,7 +171,7 @@ main {
   height: 30px;
   background-color: #d9ff00;
   border-radius: 50%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.5);
   /* animation: glow 0.5s infinite; */
 }
@@ -192,7 +192,7 @@ main {
   background-color: #ff1100;
   border-radius: 50%;
   /* animation: glow 0.5s infinite; */
-  border: 1px solid black;
+  /* border: 1px solid black; */
   box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -234,7 +234,6 @@ input {
   font-size: 1em;
   flex-grow: 1;
   box-shadow: 2px 2px 0px rgb(14, 14, 14);
-  
 }
 
 .searchButton {
@@ -321,10 +320,9 @@ ul {
   display: flex;
   justify-content: center;
 }
-.border-img img{
+.border-img img {
   object-fit: scale-down;
 }
-
 
 .cards-name {
   background: linear-gradient(rgb(243, 214, 109) 50%, rgb(239, 221, 173));
