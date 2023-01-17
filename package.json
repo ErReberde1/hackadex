@@ -1,20 +1,19 @@
 {
-  "name": "proyectopokemon",
+  "name": "hackadex",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ErReberde1/proyectoPokemon.git"
+    "url": "git+https://github.com/ErReberde1/hackadex.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ErReberde1/proyectoPokemon/issues"
+    "url": "https://github.com/ErReberde1/hackadex/issues"
   },
   "homepage": "https://erreberde1.github.io/hackadex/src/"
 }
